@@ -1,5 +1,4 @@
-import { StatusBar } from "expo-status-bar";
-import { Text, View } from "react-native";
+import { StatusBar, Text, View } from "react-native";
 import AuthNavigation from "./src/navigation/AuthNavigation";
 import { useFonts } from "expo-font";
 import * as SplashScreen from "expo-splash-screen";
@@ -14,6 +13,11 @@ export default function App() {
     "Poppins-Bold": require("./assets/fonts/Poppins/Poppins-Bold.ttf"),
     "Poppins-Black": require("./assets/fonts/Poppins/Poppins-Black.ttf"),
     "Poppins-SemiBold": require("./assets/fonts/Poppins/Poppins-SemiBold.ttf"),
+    "Syne-Regular": require("./assets/fonts/Syne/static/Syne-Regular.ttf"),
+    "Syne-Medium": require("./assets/fonts/Syne/static/Syne-Medium.ttf"),
+    "Syne-Bold": require("./assets/fonts/Syne/static/Syne-Bold.ttf"),
+    "Syne-SemiBold": require("./assets/fonts/Syne/static/Syne-SemiBold.ttf"),
+    "Syne-ExtraBold": require("./assets/fonts/Syne/static/Syne-ExtraBold.ttf"),
   });
 
   const onLayoutRootView = useCallback(async () => {
@@ -27,7 +31,11 @@ export default function App() {
   }
   return (
     <View style={{ flex: 1 }} onLayout={onLayoutRootView}>
-      <StatusBar style="auto" />
+      <StatusBar
+        barStyle={"light-content"}
+        translucent={false}
+        backgroundColor={"#FFCB05"}
+      />
       <AuthNavigation />
     </View>
   );

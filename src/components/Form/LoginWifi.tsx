@@ -1,4 +1,4 @@
-import { View, Text, ImageBackground } from "react-native";
+import { View, Text, ImageBackground, TouchableOpacity } from "react-native";
 import React from "react";
 import { Entypo, Feather, MaterialIcons } from "@expo/vector-icons";
 
@@ -8,7 +8,7 @@ export default function LoginWifi() {
       <View
         style={{
           paddingHorizontal: 36,
-          paddingVertical: 20,
+          paddingVertical: 16,
           backgroundColor: "white",
           flexDirection: "row",
           // elevation: 4,
@@ -17,17 +17,21 @@ export default function LoginWifi() {
       >
         <View
           style={{
-            paddingVertical: 2,
-            paddingHorizontal: 14,
+            // paddingVertical: 2,
+            // paddingHorizontal: 14,
+            width: 60,
+            height: 30,
+            justifyContent: "center",
+            alignItems: "center",
             borderWidth: 2,
-            borderRadius: 100,
+            borderRadius: 22,
           }}
         >
           <Text
             style={{
-              fontWeight: "900",
-              fontSize: 18,
-              fontFamily: "Poppins-Regular",
+              // fontWeight: "900",
+              fontSize: 16,
+              fontFamily: "Poppins-Bold",
             }}
           >
             MLN
@@ -43,16 +47,23 @@ export default function LoginWifi() {
         <View
           style={{ flex: 1, backgroundColor: "rgba(0,0,0,.1)", padding: 16 }}
         >
-          <View style={{ paddingVertical: 10 }}>
-            <Text style={{ fontFamily: "Poppins-Bold", fontSize: 34 }}>
+          <View style={{ paddingVertical: 4 }}>
+            <Text style={{ fontFamily: "Poppins-Bold", fontSize: 32 }}>
               Welcome back.
             </Text>
-            <Text style={{ fontFamily: "Poppins-Bold", fontSize: 34 }}>
+            <Text
+              style={{
+                fontFamily: "Poppins-Bold",
+                fontSize: 32,
+                marginVertical: 0,
+              }}
+              // adjustsFontSizeToFit={true}
+            >
               Log in.
             </Text>
           </View>
           <View style={{ flex: 2, justifyContent: "flex-end" }}>
-            <View
+            <TouchableOpacity
               style={{
                 backgroundColor: "rgba(255,255,255,.5)",
                 height: 80,
@@ -66,12 +77,19 @@ export default function LoginWifi() {
               }}
             >
               <Entypo name="log-out" size={24} color="#FFCB05" />
-              <Text style={{ fontFamily: "Poppins-Medium", color: "#333333" }}>
-                Resume Session
-              </Text>
+              <View style={{ flexDirection: "column" }}>
+                <Text style={{ fontFamily: "Poppins-Bold", color: "#333333" }}>
+                  Resume Session
+                </Text>
+                <Text
+                  style={{ fontFamily: "Poppins-Medium", color: "#666666" }}
+                >
+                  MOLOKO CHRIS
+                </Text>
+              </View>
               <MaterialIcons name="navigate-next" size={24} color="#333333" />
-            </View>
-            <View
+            </TouchableOpacity>
+            <TouchableOpacity
               style={{
                 backgroundColor: "rgba(255,255,255,.5)",
                 height: 80,
@@ -85,11 +103,18 @@ export default function LoginWifi() {
               }}
             >
               <Feather name="wifi" size={24} color="#FFCB05" />
-              <Text style={{ fontFamily: "Poppins-Medium", color: "#333333" }}>
-                Log in with Wi-Fi
-              </Text>
+              <View style={{ flexDirection: "column" }}>
+                <Text style={{ fontFamily: "Poppins-Bold", color: "#333333" }}>
+                  Log in with Wi-Fi
+                </Text>
+                <Text
+                  style={{ fontFamily: "Poppins-Medium", color: "#666666" }}
+                >
+                  OR ANOTHER NUMBER
+                </Text>
+              </View>
               <MaterialIcons name="navigate-next" size={24} color="#333333" />
-            </View>
+            </TouchableOpacity>
           </View>
         </View>
       </ImageBackground>
