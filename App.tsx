@@ -1,5 +1,6 @@
 import { StatusBar, Text, View } from "react-native";
 import AuthNavigation from "./src/navigation/AuthNavigation";
+import { NavigationContainer } from "@react-navigation/native";
 import { useFonts } from "expo-font";
 import * as SplashScreen from "expo-splash-screen";
 import { useCallback } from "react";
@@ -36,7 +37,9 @@ export default function App() {
         translucent={false}
         backgroundColor={"#FFCB05"}
       />
-      <AuthNavigation />
+      <NavigationContainer>
+        <AuthNavigation />
+      </NavigationContainer>
     </View>
   );
 }
